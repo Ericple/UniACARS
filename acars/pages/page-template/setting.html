@@ -1,0 +1,120 @@
+<!-- <link rel="stylesheet" href="../styles/animate.min.css"> -->
+<div id="container-page" class="animate__animated animate__fadeInLeft animate__fast">
+    <h1><itn i-slot="setting-title"></itn></h1>
+    <p class="text-muted"><itn i-slot="setting-subtitle"></itn>. Version: 2.0.0</p>
+    <div class="row row-deck row-cards">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-simb-user-reset"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-simb-user-reset"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <button id="reset-simbrief" class="btn btn-outline-danger"><itn i-slot="setting-item-action-simb-user-reset"></itn></button>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-language"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-language"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <select id="language-select" class="form-select">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-theme"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-theme"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <select id="theme-style-select" class="form-select">
+                                <option id="dark-theme-option" value="dark" name="itn" i-slot="setting-item-option-theme-dark"></option>
+                                <option id="light-theme-option" value="light" name="itn" i-slot="setting-item-option-theme-light"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-imperial-unit"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-imperial-unit"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <label class="form-check form-switch">
+                                <input id="use-imperial" type="checkbox" class="form-check-input">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-log-refill"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-log-refill"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <label class="form-check form-switch">
+                                <input id="log-refresh" type="checkbox" class="form-check-input">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-pa"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-pa"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <div class="setting-action btn-list">
+                                <label class="form-check form-switch">
+                                    <input id="enable-pa" type="checkbox" class="form-check-input">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-voice-recog"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-voice-recog"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <div class="setting-action btn-list">
+                                <label class="form-check form-switch">
+                                    <input id="enable-vocrec" type="checkbox" class="form-check-input">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-sp"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-sp"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <select id="sound-pack-select" class="form-select" disabled>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-logout"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-logout"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <button id="log-out" class="btn btn-danger"><itn i-slot="setting-item-action-logout-confirm"></itn></button>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-title">
+                            <h3><itn i-slot="setting-item-reset"></itn></h3>
+                            <span class="text-muted"><itn i-slot="setting-item-desc-reset"></itn></span>
+                        </div>
+                        <div class="setting-action btn-list">
+                            <button id="reset" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-danger"><itn i-slot="setting-item-action-reset-wipe"></itn></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

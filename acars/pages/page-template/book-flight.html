@@ -1,0 +1,33 @@
+<div id="container-page" class="animate__animated animate__fadeInLeft animate__fast">
+    <h1><a id="bookings-page" class="btn btn-ghost-primary" style="padding-right: 0; margin-right: 10px; padding-left: 12px">
+        <svg t="1689067309148" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2274" width="200" height="200"><path d="M511.988232 920.336012c5.500271 0 11.000542-2.142803 15.189957-6.347568 8.394181-8.346085 8.394181-22.032806 0-30.379914l-257.665431-257.873162c-8.378831-8.394181-21.98471-8.394181-30.331819 0-8.394181 8.346085-8.394181 22.032806 0 30.379914l257.665431 257.873162C501.035786 918.193209 506.487961 920.336012 511.988232 920.336012L511.988232 920.336012zM125.545856 533.430078l772.916475 0c11.879562 0 21.537526-9.561773 21.537526-21.441335s-9.657964-21.537526-21.537526-21.537526L177.383478 490.451218l349.794711-350.08226c8.394181-8.346085 8.394181-21.952988 0-30.379914-8.394181-8.394181-21.98471-8.394181-30.331819 0l-386.537544 386.809743c-6.123464 6.123464-7.978718 15.397688-4.621251 23.424502C108.965226 528.23373 116.816031 533.430078 125.545856 533.430078L125.545856 533.430078z" p-id="2275" fill="#1296db"></path></svg>
+    </a><itn i-slot="book-title"></itn></h1>
+    <p class="text-muted"><itn i-slot="book-subtitle"></itn></p>
+    <input type="text" class="form-control mb-3" placeholder="Filter" id="flight-filter" />
+    <div id="book-container">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive" id="list-flight-book">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th><button class="table-sort" data-sort="sort-flightNum">flight no.</button></th>
+                            <th><button class="table-sort" data-sort="sort-departure">departure</button></th>
+                            <th><button class="table-sort" data-sort="sort-arrival">arrival</button></th>
+                            <th><button class="table-sort" data-sort="sort-aircraft">aircraft</button></th>
+                            <th><button class="table-sort" data-sort="sort-level">flight level</button></th>
+                            <th><button class="table-sort" data-sort="sort-distance">distance</button></th>
+                            <th><button class="table-sort" data-sort="sort-depTime">dep time</button></th>
+                            <th><button class="table-sort" data-sort="sort-arrTime">arr time</button></th>
+                            <th><button class="table-sort" data-sort="sort-operation">operation</button></th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-tbody" id="table-flight-book">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

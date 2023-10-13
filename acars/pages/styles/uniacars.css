@@ -1,0 +1,121 @@
+:root {
+    --normal-hover: rgba(192, 192, 192, 0.452);
+}
+@font-face {
+    font-family: 'codefont';
+    src: url('./CascadiaCode.ttf');
+}
+html {
+    font-family: 'codefont';
+}
+.setting-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    line-height: 36px;
+}
+.setting-title {
+    display: block;
+}
+.setting-item .btn{
+    height: 36px;
+}
+.setting-item select {
+    height: 36px;
+}
+.side-bar {
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    width: 64px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.side-bar-item {
+    width: 48px;
+    height: 48px;
+    margin: 8px;
+    margin-bottom: 0;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    justify-content: center;
+    line-height: 48px;
+}
+.app-title {
+    text-align: center;
+    justify-content: center;
+    margin: 8px;
+    user-select: none;
+    margin-bottom: 0;
+}
+.side-bar-item.setting {
+    position: fixed;
+    bottom: 32px;
+}
+.side-bar-item:hover {
+    background-color: var(--normal-hover)
+}
+.side-bar-item.active {
+    background-color: var(--normal-hover);
+}
+.version-indicator {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 64px;
+    margin-bottom: 8px;
+    user-select: none;
+}
+.form-control-btn {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    pad: 0;
+    text-align: center;
+    justify-content: center;
+    width: 45px;
+    height: 32px;
+    padding: 8px;
+}
+.form-control-btn.close:hover {
+    background-color: rgba(255, 0, 0, 0.616);
+}
+.form-control-btn:hover {
+    background-color: var(--normal-hover);
+}
+.drag-region {
+    -webkit-app-region: drag;
+    position: fixed;
+    width: calc(100% - 135px);
+    height: 32px;
+}
+.drag-region.main {
+    -webkit-app-region: drag;
+    position: fixed;
+    width: calc(100% - 199px);
+    height: 32px;
+    margin-left: 64px;
+}
+.page-container {
+    position: fixed;
+    left: 64px;
+    width: calc(100% - 64px);
+    top: 32px;
+    height: calc(100% - 32px);
+    overflow: hidden;
+    padding: 16px;
+}
+#ofp-container {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+}
+#flight-map {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+}

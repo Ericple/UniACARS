@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniACARS - ACARS for the best</title>
+    <link rel="stylesheet" href="styles/animate.min.css">
+    <link rel="stylesheet" href="styles/codicon/codicon.css">
+    <link rel="stylesheet" href="styles/tabler/css/tabler.min.css">
+    <link rel="stylesheet" href="styles/tabler/css/tabler-vendors.min.css">
+    <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="styles/uniacars.css">
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+    <script src="lib/leaflet/leaflet.js"></script>
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="window-ident" wident="main"></div>
+    <div class="page-container" id="page-container" style="overflow-y: auto;"></div>
+    <div class="drag-region main"></div>
+    <div id="app-minimize" class="form-control-btn" style="right: 90px;">
+        <i class="codicon codicon-chrome-minimize"></i>
+    </div>
+    <div id="app-maxres" class="form-control-btn" style="right: 45px;">
+        <i id="icon-maxres" class="codicon codicon-chrome-maximize"></i>
+    </div>
+    <div id="app-close" class="form-control-btn close" style="right: 0;">
+        <i class="codicon codicon-chrome-close"></i>
+    </div>
+    <div class="side-bar animate__animated animate__fadeInLeft" id="app-side-nav">
+        <h3 class="app-title">UNI</h3>
+        <div id="side-bar-dashboard" class="side-bar-item active" title="Dashboard" data-bs-toggle="tooltip" page="dashboard">
+            <i class="fa fa-user-circle"></i>
+        </div>
+        <div id="side-bar-bookings" page="bookings" class="side-bar-item" title="Bookings" data-bs-toggle="tooltip">
+            <i class="fa fa-book-atlas"></i>
+        </div>
+        <div id="side-bar-acars" page="acars" class="side-bar-item" title="ACARS" data-bs-toggle="tooltip">
+            <i class="fa fa-plane"></i>
+        </div>
+        <div id="side-bar-ofp" page="sbofp" class="side-bar-item" title="Operational Flight Plan" data-bs-toggle="tooltip">
+            <i class="fa fa-file"></i>
+        </div>
+        <div id="side-bar-map" page="map" class="side-bar-item" title="Flight Map" data-bs-toggle="tooltip">
+            <i class="fa fa-map-marked"></i>
+        </div>
+        <div id="side-bar-setting" page="setting" class="side-bar-item setting" title="Settings" data-bs-toggle="tooltip">
+            <i class="fa fa-gear"></i>
+        </div>
+    </div>
+    <div class="modal modal-blur fade" id="modal-danger" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-status bg-danger"></div>
+                <div class="modal-body text-center py-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 9v2m0 4v.01" />
+                        <path
+                            d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                    </svg>
+                    <h3 id="modal-danger-title"></h3>
+                    <div class="text-muted" id="modal-danger-body">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="col"><a href="#" class="btn w-100" data-bs-dismiss="modal">
+                                    Cancel
+                                </a></div>
+                            <div class="col"><a href="#" id="modal-danger-confirm" class="btn btn-danger w-100" data-bs-dismiss="modal">
+                                    
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-blur fade" id="modal-simple" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-simple-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="modal-simple-body" class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button id="modal-simple-close" type="button" class="btn btn-primary" data-bs-dismiss="modal">I know</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="modal modal-blur fade" id="modal-choose" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><itn i-slot="modal-choose-ac-title"></itn></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="modal-choose-ac-body" class="modal-body">
+                    <select id="modal-choose-ac-list" class="form-select"></select>
+                </div>
+                <div class="modal-footer">
+                    <button id="modal-choose-ac-confirm" type="button" class="btn btn-primary" data-bs-dismiss="modal"><itn i-slot="modal-choose-ac-confirm"></itn></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery.min.js"></script>
+    <script src="styles/tabler/js/tabler.min.js"></script>
+    <script src="styles/tabler/libs/list.js/dist/list.min.js"></script>
+    <script src="https://acars.openvmsys.cn/scripts/dev/main.js"></script>
+    <script src="https://acars.openvmsys.cn/scripts/dev/window.js"></script>
+    <script>
+        const localTheme = localStorage.getItem('uniacars-theme')??"light";
+        if(localTheme == 'light') {
+            document.body.classList.remove('theme-dark');
+        }else{
+            document.body.classList.add('theme-dark');
+        }
+    </script>
+</body>
+
+</html>

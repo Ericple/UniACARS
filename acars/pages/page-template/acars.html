@@ -1,0 +1,88 @@
+<!-- <link rel="stylesheet" href="../styles/animate.min.css"> -->
+<div id="container-page" class="animate__animated animate__fadeInLeft animate__fast">
+    <h1><itn i-slot="acars-title"></itn></h1>
+    <p class="text-muted"><itn i-slot="acars-subtitle"></itn></p>
+    <div class="row row-deck row-cards">
+        <div class="col-lg-6 col-md-6 text-center mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <ul class="list-unstyled">
+                                <h2 id="dep-icao"></h2>
+                                <p id="dep-name" class="text-muted"></p>
+                                <h4 id="dep-time"></h4>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <ul class="list-unstyled">
+                                <h2 id="flight-num"></h2>
+                                <h5 id="flight-distance"></h5>
+                                <hr style="margin: 10px 0">
+                                <h5 id="flight-aircraft"></h5>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <ul class="list-unstyled">
+                                <h2 id="arr-icao"></h2>
+                                <p id="arr-name" class="text-muted"></p>
+                                <h4 id="arr-time"></h4>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 text-center mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-ground-altitude"></itn>: <span id="ground-altitude"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-gs"></itn>: <span id="ground-speed"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-as"></itn>: <span id="air-speed"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-heading"></itn>: <span id="heading"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-lat"></itn>: <span id="latitude"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-lng"></itn>: <span id="longitude"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-pitch"></itn>: <span id="pitch"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-roll"></itn>: <span id="roll"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-aircraft"></itn>: <span id="aircraft-type"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center mb-3">
+                            <itn i-slot="acars-data-field-g"></itn>: <span id="g-force"></span>
+                        </div>
+                    </div>
+                    <div id="flight-info"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <textarea id="log-container" style="font-family: 'codefont';" class="form-control mb-3" rows="18" readonly>Loading...</textarea>
+    <div class="btn-list">
+        <button id="cancel-acars" class="btn btn-outline-danger"><itn i-slot="acars-action-cancel"></itn></button>
+    </div>
+</div>

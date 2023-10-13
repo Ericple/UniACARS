@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/animate.min.css">
+    <link rel="stylesheet" href="styles/codicon/codicon.css">
+    <link rel="stylesheet" href="styles/tabler/css/tabler.min.css">
+    <link rel="stylesheet" href="styles/tabler/css/tabler-vendors.min.css">
+    <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="styles/uniacars.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column">
+    <div id="window-ident" wident="login"></div>
+    <div class="drag-region"></div>
+    <div class="row g-0 flex-fill">
+        <div class="col-12 col-lg-6 col-xl-4 border-top-wide border-primary d-flex flex-column justify-content-center">
+            <div class="container container-tight my-5 px-lg-5">
+                <h2 class="h3 text-center mb-3">Login to your account</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="ident" class="form-label">Airline</label>
+                        <select class="form-select" id="airline-select">
+                            <option value="" selected>Please select your airline</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ident" class="form-label">Email / Cid</label>
+                        <input id="ident" type="text" name="ident" class="form-control" placeholder="example@example.com"
+                            autocomplete="off">
+                    </div>
+                    <div class="mb-2">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group input-group-flat">
+                            <input id="password" type="password" class="form-control" placeholder="Your password" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-check">
+                            <input id="remember" type="checkbox" class="form-check-input" />
+                            <span class="form-check-label">Remember me on this device</span>
+                        </label>
+                    </div>
+                    <div class="form-footer">
+                        <button id="login" class="btn btn-primary w-100" disabled>Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="app-minimize" class="form-control-btn" style="right: 90px;">
+            <i class="codicon codicon-chrome-minimize"></i>
+        </div>
+        <div id="app-maxres" class="form-control-btn" style="right: 45px;">
+            <i id="icon-maxres" class="codicon codicon-chrome-maximize"></i>
+        </div>
+        <div id="app-close" class="form-control-btn close" style="right: 0;">
+            <i class="codicon codicon-chrome-close"></i>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-8 d-none d-lg-block">
+            <!-- Photo -->
+            <div id="login-img" class="bg-cover h-100 min-vh-100"></div>
+          </div>
+    </div>
+    <script src="styles/tabler/js/tabler.min.js"></script>
+    <script src="https://acars.openvmsys.cn/scripts/dev/window.js"></script>
+    <script src="https://acars.openvmsys.cn/scripts/dev/login.js"></script>
+    <script>
+        const localTheme = localStorage.getItem('uniacars-theme')??"light";
+        if(localTheme == 'light') {
+            document.body.classList.remove('theme-dark');
+        }else{
+            document.body.classList.add('theme-dark');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!-- <link rel="stylesheet" href="../styles/tabler/css/tabler.min.css"> -->
+<div id="container-page" class="animate__animated animate__fadeInLeft animate__fast">
+    <h1><itn i-slot="dashboard-title"></itn></h1>
+    <p class="text-muted"><span name="itn" id="greet-word"></span>, <span id="pilot-name" class="h2"></span> - <span id="pilot-rank"></span></p>
+    <div class="row row-deck row-cards mb-3" style="overflow-y: scroll;">
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-clock" style="margin-right: 10px;"></i>
+                        <div class="subheader"><itn i-slot="dashboard-info-card-flight-hour"></itn></div>
+                    </div>
+                    <div id="flight-hours" class="h1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-file" style="margin-right: 10px;"></i>
+                        <div class="subheader"><itn i-slot="dashboard-info-card-total-pireps"></itn></div>
+                    </div>
+                    <div id="total-pireps" class="h1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-route" style="margin-right: 10px;"></i>
+                        <div class="subheader"><itn i-slot="dashboard-info-card-miles"></itn></div>
+                    </div>
+                    <div class="h1" id="total-miles"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-plane-arrival" style="margin-right: 10px;"></i>
+                        <div class="subheader"><itn i-slot="dashboard-info-card-landing-rate"></itn></div>
+                    </div>
+                    <div class="h1" id="ldg-rate"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-deck row-cards">
+        <div class="col-sm-6 col-lg-4 col-md-4 h-100 animate__animated animate__fadeInLeft">
+            <div class="card">
+                <div class="card-body">
+                    <h2>
+                        <i class="fa fa-newspaper"></i>
+                        <itn i-slot="dashboard-news-card-title"></itn>
+                    </h2>
+                    <h2 id="news-title"></h2>
+                    <p class="text-muted" id="news-poster"></p>
+                    <p id="news-body"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-8 col-lg-8 col-sm-6">
+            <div id="notice-container" style="overflow-y: auto;overflow-x: hidden;">
+
+            </div>
+        </div>
+    </div>
+</div>

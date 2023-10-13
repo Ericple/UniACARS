@@ -1,0 +1,28 @@
+<div id="container-page" class="animate__animated animate__fadeInLeft animate__fast">
+    <h1><itn i-slot="ofp-title"></itn></h1>
+    <p class="text-muted"><itn i-slot="ofp-subtitle"></itn></p>
+    <div id="info-req-view" class="d-none animate__animated animate__fast d-none">
+        <div class="card">
+            <div class="card-body">
+                <h3><itn i-slot="ofp-activate-card-title"></itn></h3>
+                <div class="input-group">
+                    <input id="simb-ident" type="text" class="form-control">
+                    <button id="set-simb-ident" class="btn btn-primary"><itn i-slot="ofp-activate-card-action-get"></itn></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ofp-view" class="animate__animated animate__fast d-none">
+        <iframe id="ofp-container" src="" frameborder="0"></iframe>
+    </div>
+    <div id="loader" class="page page-center animate__animated animate__fast">
+        <div class="container container-slim py-4">
+            <div class="text-center">
+                <div class="text-muted mb-3"><itn i-slot="ofp-loader-text"></itn></div>
+                <div class="progress progress-sm">
+                    <div class="progress-bar progress-bar-indeterminate"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
