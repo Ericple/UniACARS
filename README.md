@@ -29,3 +29,35 @@ Interested in UniACARS? [Write an email](mailto:dev@peercat.cn) to me for furthe
 
 - ### [Virtual China Eastern Airline](https://vceair.net/)
 - ### [Virtual Xiamen Airline](https://vxiamenair.net/aoc)
+
+## Build your distribution
+
+- Clone this repository using git command:
+
+```bash
+git clone https://github.com/Ericple/UniACARS.git
+```
+
+- Run `npm install` to get all the dependencies this project needs:
+
+```bash
+npm install
+```
+
+- Build this project with the command below:
+
+```bash
+npm run build
+```
+
+### Debug
+
+To test your redistribution, run this command:
+
+```bash
+npm run debug
+```
+
+## Docs for developers
+
+For how to write an plugin for UniACARS, please refer to uniacars wiki page.
