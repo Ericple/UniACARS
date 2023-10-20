@@ -41,10 +41,12 @@ const loadBookings = () => {
     const bookButton = document.getElementById('book-flight-page');
     if (!container || !bookButton)
         return;
+    container.innerHTML = "";
     bookButton.onclick = function () {
         (0, loader_1.default)('book-flight', flightbook_1.loadFlightBook);
     };
-    (0, get_1.default)(`${localStorage.getItem('uniacars-req-url')}${global_1.default}bids&sid=${localStorage.getItem('uniacars-session')}`).then(data => {
+    (0, get_1.default)(`${localStorage.getItem('uniacars-req-url')}${global_1.default}bids&sid=${localStorage.getItem('uniacars-session')}`)
+        .then(data => {
         if (data == 'null')
             return;
         const books = JSON.parse(data);

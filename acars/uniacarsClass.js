@@ -54,20 +54,18 @@ class UniACARS {
             this.checkEnvDebug(this.mainWindow);
             this.mainWindow.loadFile((0, router_1.page)('main'));
             this.mainWindow.show();
+            this.loginWindow.hide();
         }
     }
     LogOutHandler(e, arg) {
-        var _a;
         if (this.loginWindow) {
             this.checkEnvDebug(this.loginWindow);
             this.loginWindow.loadFile((0, router_1.page)('login'));
             this.loginWindow.show();
-            (_a = this.mainWindow) === null || _a === void 0 ? void 0 : _a.close();
+            this.mainWindow.hide();
         }
     }
     QuitHandler(e, arg) {
-        if (!this.mainWindow)
-            return;
         electron_1.dialog.showMessageBox(this.mainWindow, {
             message: "确认要打卡下班吗?",
             type: "question",
