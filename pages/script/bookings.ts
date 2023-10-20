@@ -129,7 +129,7 @@ export const loadBookings = () => {
                     `"${(routeField as any).value}"`, 
                     (soundpackName !== null && enableVoiceHelper !== null) ? soundpackName : 'default', 
                     (forceSyncTime == null || forceSyncTime == "0") ? 0 : 1, 
-                    (enableVoiceRecog == null || enableVoiceRecog == '0') ? 0 : 1]);
+                    (enableVoiceRecog == '1') ? 1 : 0]);
                 console.log([
                     book.bidid,
                     enableVoiceHelper == null ? 0 : enableVoiceHelper,
@@ -138,7 +138,7 @@ export const loadBookings = () => {
                     `"${(routeField as any).value}"`,
                     (soundpackName !== null && enableVoiceHelper !== null) ? soundpackName : 'default',
                     (forceSyncTime == null || forceSyncTime == "0") ? 0 : 1,
-                    (enableVoiceRecog == null || enableVoiceRecog == '0') ? 0 : 1]);
+                    (enableVoiceRecog == '1') ? 1 : 0]);
                 loadPage("acars", loadAcarsPage);
                 sidebarSelect(2);
             }

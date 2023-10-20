@@ -101,22 +101,22 @@ export const loadAcarsPage = () => {
         const flightInfo = JSON.parse(info);
         const useImperial = localStorage.getItem('uniacars-imperial-unit');
         if (useImperial === null || useImperial === '0') {
-            altitude.innerText = flightInfo.Altitude.Metric.toFixed(3) + 'm';
-            groundSpd.innerText = flightInfo.GroundSpeed.Metric.toFixed(3) + 'm/s';
-            airSpd.innerText = flightInfo.AirSpeed.Metric.toFixed(3) + 'm/s';
+            altitude.innerText = flightInfo.Altitude.Metric.toFixed(1) + 'm';
+            groundSpd.innerText = flightInfo.GroundSpeed.Metric.toFixed(1) + 'm/s';
+            airSpd.innerText = flightInfo.AirSpeed.Metric.toFixed(1) + 'm/s';
             longitude.innerText = flightInfo.Longitude.DMSValue;
             latitude.innerText = flightInfo.Latitude.DMSValue;
         } else {
-            altitude.innerText = flightInfo.Altitude.Imperial.toFixed(3) + 'ft';
-            groundSpd.innerText = flightInfo.GroundSpeed.Imperial.toFixed(3) + 'kts';
-            airSpd.innerText = flightInfo.AirSpeed.Imperial.toFixed(3) + 'kts';
-            longitude.innerText = flightInfo.Longitude.DecimalValue.toFixed(6);
-            latitude.innerText = flightInfo.Latitude.DecimalValue.toFixed(6);
+            altitude.innerText = flightInfo.Altitude.Imperial.toFixed(0) + 'ft';
+            groundSpd.innerText = flightInfo.GroundSpeed.Imperial.toFixed(1) + 'kts';
+            airSpd.innerText = flightInfo.AirSpeed.Imperial.toFixed(1) + 'kts';
+            longitude.innerText = flightInfo.Longitude.DecimalValue.toFixed(3);
+            latitude.innerText = flightInfo.Latitude.DecimalValue.toFixed(3);
         }
-        heading.innerText = flightInfo.Heading;
-        pitch.innerText = flightInfo.Pitch;
-        roll.innerText = flightInfo.Roll;
-        gForce.innerText = flightInfo.GForce;
+        heading.innerText = flightInfo.Heading.toFixed(1);
+        pitch.innerText = flightInfo.Pitch.toFixed(1);
+        roll.innerText = flightInfo.Roll.toFixed(1);
+        gForce.innerText = flightInfo.GForce.toFixed(1);
         aircraftType.innerText = flightInfo.AircraftType == 'null' ? 'Unknown' : flightInfo.AircraftType;
     });
     ipcRenderer.on('flight-end', (e, result) => {

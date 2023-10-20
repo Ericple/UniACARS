@@ -22,6 +22,7 @@ import path from 'path';
 import { getCurrentLanguage, internationalize } from "../inten";
 
 export const loadSetting = () => {
+    localStorage.setItem('uniacars-enable-voice-recog', '0');
     const resetSimbrief = document.getElementById('reset-simbrief');
     const useImperial = document.getElementById('use-imperial');
     const enablePA = document.getElementById('enable-pa');
@@ -34,7 +35,7 @@ export const loadSetting = () => {
     const lightOption = document.getElementById('light-theme-option');
     const languageSelect = document.getElementById('language-select');
     const enableVoiceRecognition = document.getElementById('enable-vocrec');
-    if (!languageSelect || !enableVoiceRecognition ||!logOut || !themeSelect || !darkOption || !lightOption || !resetSoftware || !selectSoundPack || !enablePA || !useImperial || !resetSimbrief || !autoRefreshSet) return;
+    if (!languageSelect || !enableVoiceRecognition || !logOut || !themeSelect || !darkOption || !lightOption || !resetSoftware || !selectSoundPack || !enablePA || !useImperial || !resetSimbrief || !autoRefreshSet) return;
     const simbriefIdent = localStorage.getItem('uniacars-simb-ident');
     const imperialUnit = localStorage.getItem('uniacars-imperial-unit');
     const autoRefresh = localStorage.getItem('uniacars-log-auto-refresh');
@@ -48,9 +49,9 @@ export const loadSetting = () => {
     });
     languagePacks.forEach(languagePack => {
         const lang = getCurrentLanguage();
-        if(languagePack == lang) {
+        if (languagePack == lang) {
             languageSelect.innerHTML += `<option value="${languagePack}" selected>${languagePack.toUpperCase()}</option>`;
-        }else{
+        } else {
             languageSelect.innerHTML += `<option value="${languagePack}">${languagePack.toUpperCase()}</option>`;
         }
     })
@@ -65,7 +66,7 @@ export const loadSetting = () => {
     if (autoRefresh != null) autoRefreshSet?.setAttribute('checked', '');
     if (imperialUnit == '1') useImperial.setAttribute('checked', '');
     const enableRecog = localStorage.getItem('uniacars-enable-voice-recog');
-    if(enableRecog == '1') enableVoiceRecognition.setAttribute('checked', '');
+    if (enableRecog == '1') enableVoiceRecognition.setAttribute('checked', '');
     if (simbriefIdent == null) resetSimbrief.setAttribute('disabled', '');
     if (activeSoundPack == null || activeSoundPack == 'default') (selectSoundPack as any).value = 'default';
     resetSimbrief.onclick = function () {
@@ -80,10 +81,10 @@ export const loadSetting = () => {
             localStorage.setItem('uniacars-imperial-unit', '0');
         }
     }
-    enableVoiceRecognition.onchange = function() {
-        if((enableVoiceRecognition as any).checked) {
+    enableVoiceRecognition.onchange = function () {
+        if ((enableVoiceRecognition as any).checked) {
             localStorage.setItem('uniacars-enable-voice-recog', '1');
-        }else{
+        } else {
             localStorage.setItem('uniacars-enable-voice-recog', '0');
         }
     }
@@ -111,9 +112,9 @@ export const loadSetting = () => {
     }
     autoRefreshSet.onchange = function () {
         if ((autoRefreshSet as any).checked) {
-            localStorage.removeItem('uniacars-log-auto-refresh');
-        } else {
             localStorage.setItem('uniacars-log-auto-refresh', '1');
+        } else {
+            localStorage.removeItem('uniacars-log-auto-refresh');
         }
     }
     resetSoftware.onclick = function () {

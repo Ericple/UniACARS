@@ -14,7 +14,7 @@
     "pack": "npx asar pack acars uni-acars/app.asar",
     "asartest": "npm run compile && npm run pack && npx electron uni-acars/app.asar/uniacars.js",
     "bundle": "npx electron-packager . uni-acars --build-version=2.4.3 --platform=win32 --arch=x64 --asar --overwrite --icon=./icon.ico",
-    "build": "npm run compile && npm run pack && npm run bundle"
+    "build": "npm run compile && npm run bundle"
   },
   "keywords": [
     "acars"
