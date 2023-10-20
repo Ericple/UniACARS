@@ -51,6 +51,7 @@ export default class UniACARS {
       this.checkEnvDebug(this.mainWindow);
       this.mainWindow.loadFile(page('main'));
       this.mainWindow.show();
+      this.loginWindow.hide();
     }
   }
   public LogOutHandler(e: IpcMainInvokeEvent, arg: any) {
@@ -58,11 +59,10 @@ export default class UniACARS {
       this.checkEnvDebug(this.loginWindow);
       this.loginWindow.loadFile(page('login'));
       this.loginWindow.show();
-      this.mainWindow?.close();
+      this.mainWindow.hide();
     }
   }
   public QuitHandler(e: IpcMainInvokeEvent, arg: any) {
-    if (!this.mainWindow) return;
     dialog.showMessageBox(this.mainWindow, {
       message: "确认要打卡下班吗?",
       type: "question",

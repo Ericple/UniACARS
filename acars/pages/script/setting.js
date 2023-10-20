@@ -35,6 +35,7 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const inten_1 = require("../inten");
 const loadSetting = () => {
+    localStorage.setItem('uniacars-enable-voice-recog', '0');
     const resetSimbrief = document.getElementById('reset-simbrief');
     const useImperial = document.getElementById('use-imperial');
     const enablePA = document.getElementById('enable-pa');
